@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Negocio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #0a74da;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #0a74da;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .servicios {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      width: 250px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .btn {
+      background-color: #0a74da;
+      color: white;
+      padding: 10px 15px;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn:hover {
+      background-color: #095ab5;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Mi Negocio</h1>
+  <p>Soluciones profesionales para ti</p>
+</header>
+
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section id="inicio">
+  <h2>Bienvenido</h2>
+  <p>Ofrecemos servicios de calidad para ayudarte a crecer.</p>
+  <a class="btn" href="#contacto">Contáctanos</a>
+</section>
+
+<section id="servicios">
+  <h2>Nuestros Servicios</h2>
+  <div class="servicios">
+    <div class="card">
+      <h3>Servicio 1</h3>
+      <p>Descripción breve del servicio.</p>
+    </div>
+
+    <div class="card">
+      <h3>Servicio 2</h3>
+      <p>Descripción breve del servicio.</p>
+    </div>
+
+    <div class="card">
+      <h3>Servicio 3</h3>
+      <p>Descripción breve del servicio.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>📞 Teléfono: 1234-5678</p>
+  <p>📧 Email: contacto@minegocio.com</p>
