@@ -1,100 +1,137 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>SIT Díaz - Soluciones de Ingeniería</title>
+<meta charset="UTF-8">
+<title>SIT Díaz - Ingeniería y Técnicas</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-    }
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f5f5;
+}
 
-    header {
-      background-color: #0a74da;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+/* MENÚ */
+header {
+  background: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+}
 
-    nav {
-      background-color: #222;
-      padding: 10px;
-      text-align: center;
-    }
+.logo {
+  font-weight: bold;
+  color: #0a74da;
+}
 
-    nav a {
-      color: white;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
 
-    nav a:hover {
-      color: #0a74da;
-    }
+/* SECCIONES */
+section {
+  padding: 40px;
+  text-align: center;
+}
 
-    section {
-      padding: 40px;
-      text-align: center;
-    }
+.hero {
+  background: #0a74da;
+  color: white;
+}
 
-    .servicios {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+/* SERVICIOS */
+.servicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
-    .card {
-      background-color: white;
-      padding: 20px;
-      width: 260px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    }
+.card {
+  background: white;
+  padding: 20px;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
 
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+/* GALERÍA */
+.galeria img {
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+}
 
-    .btn {
-      background-color: #0a74da;
-      color: white;
-      padding: 10px 15px;
-      display: inline-block;
-      margin-top: 10px;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+/* FORMULARIO */
+form {
+  max-width: 500px;
+  margin: auto;
+}
 
-    .btn:hover {
-      background-color: #095ab5;
-    }
-  </style>
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  background: orange;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  color: white;
+  background: #0a74da;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>SIT Díaz</h1>
-  <p>Soluciones de Ingeniería y Técnicas</p>
+  <div class="logo">SIT Díaz</div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Trabajos</a>
+    <a href="#contacto">Contáctanos</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#contacto">Contacto</a>
-</nav>
-
-<section id="inicio">
-  <h2>Bienvenido</h2>
-  <p>Brindamos soluciones profesionales en ingeniería, electricidad y servicios técnicos especializados.</p>
-  <a class="btn" href="#contacto">Solicitar servicio</a>
+<section id="inicio" class="hero">
+  <h1>Soluciones de Ingeniería y Técnicas</h1>
+  <p>Servicios profesionales eléctricos, hidráulicos y técnicos</p>
+  <a class="btn" href="tel:+50212345678">📞 Llamar ahora</a>
 </section>
 
 <section id="servicios">
@@ -104,34 +141,68 @@
 
     <div class="card">
       <h3>Instalaciones Eléctricas</h3>
-      <p>Montaje, mantenimiento y reparación de sistemas eléctricos residenciales e industriales.</p>
+      <p>Residenciales e industriales</p>
     </div>
 
     <div class="card">
-      <h3>Soluciones de Ingeniería</h3>
-      <p>Diseño, planificación y ejecución de proyectos técnicos personalizados.</p>
+      <h3>Sistemas de Seguridad</h3>
+      <p>Cámaras, alarmas y control de acceso</p>
     </div>
 
     <div class="card">
-      <h3>Soporte Técnico</h3>
-      <p>Diagnóstico y solución de problemas en sistemas eléctricos y equipos técnicos.</p>
+      <h3>Sistemas Hidráulicos</h3>
+      <p>Instalación y mantenimiento</p>
+    </div>
+
+    <div class="card">
+      <h3>Remodelaciones</h3>
+      <p>Proyectos de construcción y mejoras</p>
+    </div>
+
+    <div class="card">
+      <h3>Tablayeso</h3>
+      <p>Diseño y construcción</p>
+    </div>
+
+    <div class="card">
+      <h3>Plomería</h3>
+      <p>Reparación e instalación</p>
     </div>
 
   </div>
 </section>
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>📞 Teléfono: 1234-5678</p>
-  <p>📧 Email: sitdiaz</p>
-
-  <a class="btn" href="https://wa.me/50212345678" target="_blank">
-    Escríbenos por WhatsApp
-  </a>
+<section id="galeria">
+  <h2>Trabajos Realizados</h2>
+  <div class="galeria">
+    <img src="https://via.placeholder.com/250" alt="">
+    <img src="https://via.placeholder.com/250" alt="">
+    <img src="https://via.placeholder.com/250" alt="">
+  </div>
 </section>
 
+<section id="contacto">
+  <h2>Contáctanos</h2>
+
+  <p>📞 Teléfono: 1234-5678</p>
+  <p>📧 Email: contacto@sitdiaz.com</p>
+
+  <!-- FORMULARIO -->
+  <form>
+    <input type="text" placeholder="Tu nombre" required>
+    <input type="email" placeholder="Tu correo electrónico" required>
+    <input type="text" placeholder="Asunto">
+    <textarea rows="5" placeholder="Tu mensaje"></textarea>
+    <button type="submit">ENVIAR</button>
+  </form>
+
+</section>
+
+<!-- BOTÓN WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/50212345678">💬</a>
+
 <footer>
-  <p>© 2026 SIT Díaz - Soluciones de Ingeniería y Técnicas</p>
+  <p>© 2026 SIT Díaz - Soluciones de Ingeniería</p>
 </footer>
 
 </body>
