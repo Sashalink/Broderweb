@@ -2,13 +2,16 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SIT Díaz - Ingeniería y Técnicas</title>
 
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
   background: #f5f5f5;
+  color: #333;
 }
 
 /* MENÚ */
@@ -19,9 +22,13 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
+  font-size: 24px;
   font-weight: bold;
   color: #0a74da;
 }
@@ -31,17 +38,52 @@ nav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #0a74da;
 }
 
 /* SECCIONES */
 section {
-  padding: 40px;
+  padding: 50px 20px;
   text-align: center;
 }
 
+/* HERO */
 .hero {
-  background: #0a74da;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
   color: white;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* BOTONES */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  color: white;
+  background: orange;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff9800;
 }
 
 /* SERVICIOS */
@@ -54,14 +96,54 @@ section {
 
 .card {
   background: white;
-  padding: 20px;
+  padding: 25px;
   width: 260px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #0a74da;
+}
+
+/* TRABAJOS DESPLEGABLES */
+.trabajos {
+  max-width: 900px;
+  margin: auto;
+}
+
+.trabajo-item {
+  background: white;
+  margin: 15px 0;
   border-radius: 10px;
+  overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
 }
 
-/* GALERÍA */
-.galeria img {
+.trabajo-item summary {
+  padding: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  background: #0a74da;
+  color: white;
+  list-style: none;
+}
+
+.trabajo-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.contenido {
+  padding: 20px;
+}
+
+.contenido img {
   width: 250px;
   margin: 10px;
   border-radius: 10px;
@@ -75,27 +157,28 @@ form {
 
 input, textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
   background: orange;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   cursor: pointer;
-}
-
-/* BOTONES */
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
   color: white;
-  background: #0a74da;
-  text-decoration: none;
+  font-weight: bold;
   border-radius: 5px;
+  transition: 0.3s;
 }
 
+button:hover {
+  background: #ff9800;
+}
+
+/* WHATSAPP */
 .whatsapp {
   position: fixed;
   bottom: 20px;
@@ -104,22 +187,48 @@ button {
   color: white;
   padding: 15px;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
 }
 
+/* FOOTER */
 footer {
   background: #111;
   color: white;
   text-align: center;
   padding: 20px;
 }
+
+/* RESPONSIVE */
+@media(max-width: 768px){
+
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .contenido img {
+    width: 90%;
+  }
+
+}
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo">SIT Díaz</div>
+
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
@@ -128,79 +237,151 @@ footer {
   </nav>
 </header>
 
+<!-- HERO -->
 <section id="inicio" class="hero">
   <h1>Soluciones de Ingeniería y Técnicas</h1>
-  <p>Servicios profesionales eléctricos, hidráulicos y técnicos</p>
-  <a class="btn" href="tel:+50212345678">📞 Llamar ahora</a>
+
+  <p>
+    Servicios profesionales eléctricos, hidráulicos y técnicos
+  </p>
+
+  <a class="btn" href="tel:+50212345678">
+    📞 Llamar ahora
+  </a>
 </section>
 
+<!-- SERVICIOS -->
 <section id="servicios">
   <h2>Nuestros Servicios</h2>
 
   <div class="servicios">
 
     <div class="card">
-      <h3>Instalaciones Eléctricas</h3>
+      <h3>⚡ Instalaciones Eléctricas</h3>
       <p>Residenciales e industriales</p>
     </div>
 
     <div class="card">
-      <h3>Sistemas de Seguridad</h3>
+      <h3>📹 Sistemas de Seguridad</h3>
       <p>Cámaras, alarmas y control de acceso</p>
     </div>
 
     <div class="card">
-      <h3>Sistemas Hidráulicos</h3>
+      <h3>🚰 Sistemas Hidráulicos</h3>
       <p>Instalación y mantenimiento</p>
     </div>
 
     <div class="card">
-      <h3>Remodelaciones</h3>
+      <h3>🏠 Remodelaciones</h3>
       <p>Proyectos de construcción y mejoras</p>
     </div>
 
     <div class="card">
-      <h3>Tablayeso</h3>
+      <h3>🧱 Tablayeso</h3>
       <p>Diseño y construcción</p>
     </div>
 
     <div class="card">
-      <h3>Plomería</h3>
+      <h3>🔧 Plomería</h3>
       <p>Reparación e instalación</p>
     </div>
 
   </div>
 </section>
 
+<!-- TRABAJOS -->
 <section id="galeria">
   <h2>Trabajos Realizados</h2>
-  <div class="galeria">
-    <img src="https://via.placeholder.com/250" alt="">
-    <img src="https://via.placeholder.com/250" alt="">
-    <img src="https://via.placeholder.com/250" alt="">
+
+  <div class="trabajos">
+
+    <details class="trabajo-item">
+      <summary>⚡ Instalaciones Eléctricas</summary>
+
+      <div class="contenido">
+        <img src="https://via.placeholder.com/250" alt="">
+        <img src="https://via.placeholder.com/250" alt="">
+
+        <p>
+          Proyectos eléctricos residenciales e industriales.
+        </p>
+      </div>
+    </details>
+
+    <details class="trabajo-item">
+      <summary>📹 Sistemas de Seguridad</summary>
+
+      <div class="contenido">
+        <img src="https://via.placeholder.com/250" alt="">
+        <img src="https://via.placeholder.com/250" alt="">
+
+        <p>
+          Instalación de cámaras, alarmas y control de acceso.
+        </p>
+      </div>
+    </details>
+
+    <details class="trabajo-item">
+      <summary>🚰 Sistemas Hidráulicos</summary>
+
+      <div class="contenido">
+        <img src="https://via.placeholder.com/250" alt="">
+        <img src="https://via.placeholder.com/250" alt="">
+
+        <p>
+          Trabajos de mantenimiento e instalación hidráulica.
+        </p>
+      </div>
+    </details>
+
+    <details class="trabajo-item">
+      <summary>🏠 Remodelaciones</summary>
+
+      <div class="contenido">
+        <img src="https://via.placeholder.com/250" alt="">
+        <img src="https://via.placeholder.com/250" alt="">
+
+        <p>
+          Remodelaciones y proyectos de construcción.
+        </p>
+      </div>
+    </details>
+
   </div>
 </section>
 
+<!-- CONTACTO -->
 <section id="contacto">
+
   <h2>Contáctanos</h2>
 
   <p>📞 Teléfono: 1234-5678</p>
   <p>📧 Email: contacto@sitdiaz.com</p>
 
-  <!-- FORMULARIO -->
   <form>
+
     <input type="text" placeholder="Tu nombre" required>
+
     <input type="email" placeholder="Tu correo electrónico" required>
+
     <input type="text" placeholder="Asunto">
+
     <textarea rows="5" placeholder="Tu mensaje"></textarea>
-    <button type="submit">ENVIAR</button>
+
+    <button type="submit">
+      ENVIAR
+    </button>
+
   </form>
 
 </section>
 
 <!-- BOTÓN WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/50212345678">💬</a>
+<a class="whatsapp" href="https://wa.me/50212345678">
+  💬
+</a>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 SIT Díaz - Soluciones de Ingeniería</p>
 </footer>
